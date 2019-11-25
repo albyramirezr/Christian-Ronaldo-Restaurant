@@ -1,0 +1,37 @@
+
+.carousel-inner img{
+  max-height: 90vh;
+  object-fit: cover;
+}
+
+#carousel{
+  position: relative;
+}
+
+#carousel .overlay{
+  position: absolute;
+  top: 300px;
+  bottom: 70px;
+  left: 730px;
+  right: 80px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 5px;
+}
+
+#carousel .overlay .container,
+#carousel .overlay .row{
+  height: 100%;
+}
+.overlay h1{
+  font-size: 40px
+}
+.overlay p{
+  font-size: 20px;
+}
+.p span{
+  color: #CFA670;
+}
+.history img{
+  max-width: 100%;
+}
