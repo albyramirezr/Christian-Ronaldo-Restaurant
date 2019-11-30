@@ -1,0 +1,286 @@
+*{
+  margin:0px;
+  padding:0px;
+  font-family: Calibri;
+  
+}
+body{
+ background:rgb(255, 255, 255);
+}
+
+
+.cajota >.articulos,
+.cajota >.articulos2,
+.cajota >.articulos3,
+.cajota >.pie{
+
+background: rgb(255, 255, 255);
+border-radius:5px; 
+
+}
+
+.cajota{
+
+
+  /*grid*/
+
+display:grid;
+grid-gap:20px;
+grid-template-columns:repeat(3,1fr);
+grid-template-rows:repeat(5,auto);
+
+grid-template-areas:"redes redes redes"
+                    "navegador navegador navegador"
+                    "articulos articulos articulos2"
+                    " articulos3 articulos3 articulos2"
+                    "footer footer footer";
+                   
+}
+
+   
+
+    .cajota .navegador{
+     color:#fff;
+     margin-top:-20px;
+     margin-top:80px;
+    /*grid*/
+    
+      grid-area:navegador;
+    }
+
+    .cajota .navegador ul {
+      
+      /*flex*/
+      width:100%;
+      display:flex;
+      flex:row wrap;
+      align-items:center; 
+     
+    }
+
+      .cajota .navegador ul .menu {
+      
+      width:20%; 
+      background:rgb(52, 55, 61);
+      line-height:50px;
+      list-style:none;
+      text-decoration:none;
+      text-align:center;
+      
+       /*flex*/
+      
+      flex-grow:1;
+    }
+
+    /*////////////////////////////////////*/
+
+   
+ 
+     .cajota .vista{
+      color:rgb(0, 0, 0);
+      margin-top:-20px;
+     
+     
+     /*grid*/
+     
+       grid-area:navegador;
+     }
+ 
+     .cajota .vista ul {
+       
+       /*flex*/
+       width:100%;
+       display:flex;
+       flex:row wrap;
+       align-items:; 
+      
+     }
+ 
+       .cajota .vista ul .menu  {
+       
+       
+       background:rgb(207, 207, 207);
+       line-height:100px;
+       list-style:none;
+       text-decoration:none;
+       text-align:; 
+       font-size:50px;
+
+      /*flex*/
+       
+       flex-grow:1;
+       
+     }
+
+ .cajota .vista ul #m1{
+
+  width:100%;
+         
+       }
+       
+
+
+
+
+     /*DECORACION DE LOS MOdULOS DEL MENU(219, 0, 73)0, 168, 219 21, 37, 82*/
+     
+    
+
+    .cajota .vista ul .menu a{
+      font-size:20px;
+      text-decoration:none;
+      color:rgb(0, 0, 0);
+     }
+
+     .cajota .vista ul .menu:hover a{
+     color:rgb(24, 23, 23); 
+     }
+
+
+     .cajota .navegador ul .menu:hover{
+       background:rgb(86, 169, 236);
+     }
+
+     .cajota .navegador ul .menu a{
+       font-size:20px;
+       text-decoration:none;
+       color:rgb(255, 255, 255);
+      }
+
+      .cajota .navegador ul .menu:hover a{
+      color:rgb(0, 33, 95); 
+      }
+
+
+
+
+      /*/////////////////////FORMULARIO////////////////////*/
+
+      form {
+        /* Sólo para centrar el formulario a la página */
+        margin: 0 auto;
+        width: 400px;
+        /* Para ver el borde del formulario */
+        padding: 1em;
+        border: 1px solid #CCC;
+        border-radius: 1em;
+    }
+
+    form div + div {
+      margin-top: 1em;
+  }
+  label {
+    /* Para asegurarse que todos los labels tienen el mismo tamaño y están alineados correctamente */
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+}
+
+input, textarea {
+  /* Para asegurarse de que todos los campos de texto tienen las mismas propiedades de fuente
+     Por defecto, las areas de texto tienen una fuente con monospace */
+  font: 1em sans-serif;
+
+  /* Para darle el mismo tamaño a todos los campos de texto */
+  width: 300px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  /* Para armonizar el look&feel del borde en los campos de texto */
+  border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+  /* Para dar un pequeño destaque en elementos activos*/
+  border-color: #000;
+}
+
+textarea {
+
+
+  /* Para dar suficiente espacio para escribir texto */
+  height: 5em;
+
+  /* Para permitir a los usuarios cambiar el tamaño de cualquier textarea verticalmente
+      No funciona en todos los navegadores */
+  resize: vertical;
+}
+
+.button {
+  /* Para posicionar los botones a la misma posición que los campos de texto */
+  padding-left: 60px; /* mismo tamaño a todos los elementos label */
+}
+button {
+  /* Este margen extra representa aproximadamente el mismo espacio que el espacio
+     entre los labels y sus campos de texto */
+    
+    
+     
+      /* Grosor del borde, estilo de línea y color */
+      border: 2px solid #0099CC;
+      /* Añadir esquinas curvadas */
+      border-radius: 6px;
+
+
+
+           background-color: rgb(255, 255, 255);
+           border: 2px solid rgb(8, 193, 255);
+           color: rgb(0, 55, 156);
+           padding: 16px 32px;
+           text-align: center;
+          
+           font-size: 16px;
+           margin: 4px 2px;
+           -webkit-transition-duration: 0.4s; /* Safari */
+           transition-duration: 0.4s;
+           cursor: pointer;
+           text-decoration: none;
+           text-transform: uppercase;
+     }
+     button:hover{
+           background-color: rgb(255, 255, 255); 
+           color: rgb(241, 6, 6); 
+           border: 3px solid rgb(0, 97, 129);
+     }
+
+ 
+
+input{
+
+  
+  background:rgb(255, 255, 255);
+				font-size: 16px;
+			
+				width: 100%;
+				outline: none;
+				padding: 15px;
+			
+				border: none;
+				border-bottom:  solid rgb(4, 153, 240);
+}
+
+input:hover{
+	
+				border-bottom:  solid rgb(240, 4, 4);
+}
+
+
+
+
+     
+
+
+  margin-left: .5em;
+}
+    
+
+    /*estableciendo estilos para telefono y tabletas xs*/
+
+    @media screen and (min-width:700px) and (max-width:1000px){
+
+      body{
+        background:rgb(121, 121, 121);
+   
+    }
+
+    
