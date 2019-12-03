@@ -1,57 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="cssgrid.css">
-    
-    <title>css grid</title>
-</head>
-<body>
-      <div class="cajota">
-          
-  
- <header class="vista">
-     <ul>
-        <li class="menu"id="m1"><a href="#"><b>EMPRESA VENDEDORA DE ?</b><img src="logo.png" width=80></a></li>
-              <li class="menu"id="m2"><a href="#"></a></li>
-     </ul>
- </header>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-      <nav class="navegador">
-           <ul>
-            <li class="menu"id="m1"><a href="menu.html">MENU</a></li>
-            <li class="menu"id="m2"><a href="clientes.html">CLIENTES</a></li>
-            <li class="menu"id="m3"><a href="ventas.html" >VENTAS</a></li>
-            <li class="menu"id="m4"><a href="productos.html" >PROCUCTO</a></li>
-              
-          </ul>
-     </nav>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Modulo de facturacion</title>
+  </head>
+  <body>
+<!-- header -->
+    <nav class="navbar navbar-dark bg-dark" >
+      <div class="dropdown">
+        <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+          <img src="menu.png" alt="menu" height="30px">
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="index.html">Inicio</a>
+          <a class="dropdown-item" href="productos.html">Productos</a>
+          <a class="dropdown-item" href="clientes.html">Clientes</a>
+          <a class="dropdown-item" href="inventario.html">Inventario</a>
+          <a class="dropdown-item" href="ventas.html">Ventas</a>
+        </div>
+      </div>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+        <button type="button" class="btn btn-outline-light">Buscar</button>
+      </form>
+    </nav>
+<!-- fin header-->
+<!--Cuerpo -->
+<div class="container">
+  <div class="row">
+    <div class="col mt-4 cuerpoproducto">
+      <h1>Lista de Productos</h1>
+      <a href="nuevoProducto.html" target="_blank"><span class="badge badge-success">Agregar Nuevo Producto</span></a>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col">
+      <table border="1px solid black">
+        <tr>
+          <th class="list-group-item-dark">Codigo</th>
+          <th class="list-group-item-dark">Nombre</th>
+          <th class="list-group-item-dark">Descripcion</th>
+          <th class="list-group-item-dark">Categoria</th>
+          <th class="list-group-item-dark">Precio</th>
+          <th class="list-group-item-dark">Acciones</th>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>
+<!--Fin Cuerpo -->
 
-<form action="" method="post">
-    <div>
-        <label for="name">id</label>
-        <input type="text" id="name" />
-    </div>
-    <div>
-        <label for="mail">nombre dl producto:</label>
-        <input type="email" id="mail" />
-    </div>
-    <div>
-        <label for="msg">precio</label>
-        <input id="msg"/>
-    </div>
-    
-    <div class="button">
-        <br><br><br><button type="submit">eliminar</button>
-        <button type="submit">concultar</button>
-        <button type="submit">agregar</button>
-        <button type="submit">mostrar</button>
-    </div>
-</form>
-
-
-</body> 
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
 </html>
