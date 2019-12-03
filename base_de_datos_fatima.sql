@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 03-12-2019 a las 00:41:42
+-- Tiempo de generación: 03-12-2019 a las 05:17:28
 -- Versión del servidor: 5.7.26
 -- Versión de PHP: 7.2.18
 
@@ -38,35 +38,6 @@ CREATE TABLE IF NOT EXISTS `tacceso` (
   `fecha` date NOT NULL,
   PRIMARY KEY (`ID_acceso`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tarticulos`
---
-
-DROP TABLE IF EXISTS `tarticulos`;
-CREATE TABLE IF NOT EXISTS `tarticulos` (
-  `Cod_Articulo` varchar(20) NOT NULL,
-  `Descripcion_A` varchar(32) NOT NULL,
-  `Categoria` varchar(20) NOT NULL,
-  `Cantidad` varchar(13) NOT NULL,
-  PRIMARY KEY (`Cod_Articulo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `tarticulos`
---
-
-INSERT INTO `tarticulos` (`Cod_Articulo`, `Descripcion_A`, `Categoria`, `Cantidad`) VALUES
-('envase2', 'Envase desechable tipo 2', 'Pedidos', '70'),
-('envase_1', 'Envase desechable tipo 1        ', 'Pedidos', '100'),
-('jabonL', 'Jabon liquido', 'Aseo', '45Lts'),
-('papelH', 'Papel Higienico', 'Aseo', '50 rollos'),
-('pitillos_1', 'Pitillos Normales', 'Bebida', '500'),
-('plato2', 'Plato Ondo de ceramica', 'Cocina', '70'),
-('platos_2', 'Platos de plastico', 'Pedidos', '70'),
-('plato_1', 'Platos de Ceramica', 'Cocina', '70');
 
 -- --------------------------------------------------------
 
@@ -288,36 +259,45 @@ CREATE TABLE IF NOT EXISTS `tfactura` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tingredientes`
---
-
-DROP TABLE IF EXISTS `tingredientes`;
-CREATE TABLE IF NOT EXISTS `tingredientes` (
-  `Cod_Ingrediente` varchar(20) NOT NULL,
-  `Nombre_In` varchar(25) NOT NULL,
-  `Cantidad_de_uso` int(5) NOT NULL,
-  `Precio_por_unidad` int(4) NOT NULL,
-  `Cod_Receta` varchar(20) NOT NULL,
-  PRIMARY KEY (`Cod_Ingrediente`),
-  KEY `Cod_Receta` (`Cod_Receta`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `tinventario`
 --
 
 DROP TABLE IF EXISTS `tinventario`;
 CREATE TABLE IF NOT EXISTS `tinventario` (
-  `Cod_Inventario` varchar(20) NOT NULL,
-  `Stock` int(10) NOT NULL,
-  `Cod_Producto` varchar(10) NOT NULL,
-  `Cod_Articulo` varchar(20) NOT NULL,
-  PRIMARY KEY (`Cod_Inventario`),
-  KEY `Cod_Articulo` (`Cod_Articulo`),
-  KEY `Cod_Producto` (`Cod_Producto`)
+  `ID_Producto` varchar(42) NOT NULL,
+  `Descripcion_I` varchar(50) NOT NULL,
+  `Categoria` varchar(32) NOT NULL,
+  `Stock_Actual` int(10) NOT NULL,
+  `Stock_Minimo` int(10) NOT NULL,
+  `Stock_Maximo` int(10) NOT NULL,
+  `Precio_I` varchar(35) NOT NULL,
+  PRIMARY KEY (`ID_Producto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tinventario`
+--
+
+INSERT INTO `tinventario` (`ID_Producto`, `Descripcion_I`, `Categoria`, `Stock_Actual`, `Stock_Minimo`, `Stock_Maximo`, `Precio_I`) VALUES
+('ajo_1', 'Ajo', 'Cocina', 10, 3, 20, '2$ 1kg'),
+('bolsa_de_arroz_1', 'Bolsa  de arroz de 1kg', 'Cocina', 30, 11, 45, '2$ 1kg'),
+('bolsa_de_lentejas_1', 'Bolsa de lentejas de 1kg', 'Cocina', 25, 11, 45, '2$ 1kg'),
+('bolsa_de_sal_1', 'Bolsa de sal 1kg', 'Cocina', 15, 5, 30, '2$ 1kg'),
+('carton_de_huevos_1', 'Carton de  Huevos (12)', 'Cocina', 20, 5, 25, '4$ 1 Carton'),
+('cebolla_1', 'Cebolla 1kg', 'Cocina', 13, 5, 15, '1$ 1kg'),
+('cilantro_1', 'Cilantro 1kg', 'Cocina', 12, 5, 15, '2$ 1kg'),
+('envase_1', 'Envase desechable tipo 1', 'Pedidos', 78, 50, 100, '1$ 1 Envase'),
+('envase_2', 'Envase desechable tipo 2', 'Pedidos', 82, 30, 100, '1$ 1 Envase'),
+('jabon_1', 'Jarra de Jabon liquido 2Lts', 'Aseo', 28, 10, 40, '3$ 2lts'),
+('papas_1', 'Papas 1kg', 'Cocina', 14, 8, 20, '1$ 1kg'),
+('papel_h_1', 'Paquete de Papel Higienico (6)', 'Aseo', 13, 4, 20, '3$ 1 Paquete'),
+('pitillos_1', 'Paquete de Pitillos (100)', 'Cocina', 13, 5, 25, '1$ 1 Paquete'),
+('plato_1', 'Platos de Ceramica', 'Cocina', 65, 30, 80, '1$ paquete (10)'),
+('plato_2', 'Plato Ondo de ceramica', 'Cocina', 65, 30, 80, '1$ 1 Plato caja (10)'),
+('plato_d_1', 'Platos de plastico desechables', 'Pedidos', 290, 50, 400, '1$ 1 Paquete (20)'),
+('pote_de_aceite_1', 'Pote de aceite 1Lt', 'Cocina', 20, 5, 30, '2$ 1lt'),
+('pote_de_oregano_1', 'Pote de oregano 30g', 'Cocina', 12, 5, 20, '1$ 1 Pote 30g'),
+('queso_1', 'Queso Duro 1kg', 'Cocina', 7, 3, 10, '4$ 1kg');
 
 -- --------------------------------------------------------
 
@@ -338,7 +318,8 @@ CREATE TABLE IF NOT EXISTS `tnomina_pago` (
   `Bonos` int(10) NOT NULL,
   `Total_Asignaciones` int(15) NOT NULL,
   `Pago_Total` int(15) NOT NULL,
-  PRIMARY KEY (`Cod_Nomina`,`ID_Empleado`)
+  PRIMARY KEY (`Cod_Nomina`,`ID_Empleado`),
+  KEY `ID_Empleado` (`ID_Empleado`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -370,9 +351,7 @@ CREATE TABLE IF NOT EXISTS `tproducto` (
   `Descripcion_P` varchar(300) NOT NULL,
   `Categoria` varchar(15) NOT NULL,
   `Precio_Unidad` int(4) NOT NULL,
-  `Cod_Ingrediente` varchar(20) NOT NULL,
-  PRIMARY KEY (`Cod_Producto`),
-  KEY `Cod_Ingrediente` (`Cod_Ingrediente`)
+  PRIMARY KEY (`Cod_Producto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -383,10 +362,22 @@ CREATE TABLE IF NOT EXISTS `tproducto` (
 
 DROP TABLE IF EXISTS `treceta`;
 CREATE TABLE IF NOT EXISTS `treceta` (
-  `Cod_Receta` varchar(20) NOT NULL,
-  `Comentario` varchar(300) NOT NULL,
+  `Cod_Receta` varchar(42) NOT NULL,
+  `Comentario` text NOT NULL,
   PRIMARY KEY (`Cod_Receta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `treceta`
+--
+
+INSERT INTO `treceta` (`Cod_Receta`, `Comentario`) VALUES
+('Ensalada de atun fria con pasta tornillo', '1 Zanahoria pequeña\r\n250 gr. Pasta Tornillo\r\n1 lata atún\r\n2 Cdas. Mayonesa\r\n1/2 Cda. Mostaza\r\n1 Cebolla pequeña\r\n1 Pimentón pequeño\r\n1 Tallo pequeño Celery\r\nOrégano\r\n1 Papa pequeña\r\nPimienta\r\nSal\r\n100 gr. Maíz tierno\r\n2 huevos\r\n\r\nCortar todos los vegetales en brunoise.\r\n\r\n  \r\nPoner a sancochar los huevos.\r\n\r\n  \r\nTodas las verduras ponerlas a hervir. Hasta que cada una esté en su punto. La cebolla es opcional, a mi me gusta más colocarla cruda para esta ensalada.\r\n\r\n  \r\nLuego hacer la pasta.\r\n\r\n  \r\nCuando todo esté frío y cocido. Mezclar.'),
+('Pasticho de Carne', '500 gr pasta para lasaña\r\n600 gr salsa Boloña (te dejo la receta búscala en la pasta boloña)\r\n6 rebanadas queso mozzarella\r\n6 rebanadas queso gouda\r\nc/n mantequilla\r\n500 gr salsa bechamel\r\n\r\nPasos	\r\nEn un molde rectangular agrega salsa bechamel coloca una capa de pasta agrégale salsa de carne bechamel y queso amarillo continúa colocando capas hasta llegar casi al borde del molde.\r\n\r\nEn la última capa solo agrega salsa bechamel y las rebanadas de queso mozzarella con unos puntos de mantequilla llévalo al horno por 20 minutos deja gratinar la capa de arriba sirve caliente.'),
+('Sandwich Integral con Huevos ', '4 huevos\r\n1 cebolla morada grande\r\n1 tomate grande\r\n1 cda. pasta de ajo\r\n1/2 cdta. de comino\r\n1/2 cdta. de curry\r\nal gusto Sal y pimienta\r\n1-2 cdas. aceite de oliva\r\n2 rebanadas pan integral con semillas\r\n1 rebanada gruesa de queso mozzarella\r\nEn un sartén amplio, añadir el aceite de oliva. Cortar tomate y cebolla en cuadritos y sellarlos en el aceite con la pasta de ajo, las especias, sal. Batir los huevos y adicionarlos a la mezcla y no dejar de mezclar, que queden bien revueltos, en forma de bolitas desprendidas. Rectificar sabor. Armar los sándwich: en la primera rebanada colocar el queso, luego añadir los huevos revueltos y cerrar el sándwich. Dar un golpe de calor en el microondas hasta cuando funda el queso.'),
+('Tortilla de papa y cebolla', '5 huevos\r\n3 papas\r\n1/2 cebolla\r\n1 cucharadita sal\r\nLavar y pelar las papas.\r\n\r\n  \r\nRallar las papas.\r\n\r\n  \r\nCortar la cebolla en cuadritos pequeños.\r\n\r\n  \r\nSofreír la cebolla y las papas juntas.\r\n\r\n  \r\nEn un pote aparte partir y batir los huevos.\r\n\r\n  \r\nAñadir la sal a los huevos y poner un poquito de aceite en el sartén y ponerlo a llama alta a calentar.\r\n\r\n  \r\nMezclar la cebolla y las papas sofritas con los huevos.\r\n\r\n  \r\nEchar la mezcla en el sartén caliente y bajar la llama (media).\r\n\r\n  \r\nPonerle la tapa al sartén y dejar cocinando a media llama por aprox. 20 min o hasta que se cocine. (Ir revisando que los bordes no se peguen)'),
+('Tortitas de lentejas, arroz y queso', 'Ingredientes\r\n1 taza lentejas cocidas y escurridas\r\n1 y 1/4 taza arroz preparado\r\nal gusto Queso rallado\r\nAliño: 1 diente de ajo, 1 cucharada de cebolla rallada, orégano\r\nal gusto Cilantro\r\nSal y aceite\r\n\r\nPasos	\r\nMezcla en un recipiente los ingredientes del aliño y agrega el ajo y cilantro picaditos. Lleva al bol con las lentejas bien escurridas y mézclalo todo.\r\n\r\nAgrega el arroz, el queso rallado y vuelca sobre las lentejas escurridas. Presiona con las manos o cuchara para unirlo todo muy bien; corrige la sal.\r\n\r\nToma porciones de la mezcla, forma bolitas y aplastalas para darles forma. En sartén antiadherente untado con aceite ponlas a dorar por ambos lados.'),
+('Waffles de Avena', 'Ingredientes	\r\n2 tazas Avena\r\n1 Cucharada polvo para hornear\r\n3 Cucharadas Azúcar o su equivalente en edulcorante\r\n1/2 cucharadita sal\r\n1/4 de cucharadita de canela\r\n1 taza agua\r\n1/2 cucharada esencia de vainilla\r\nOpcional: ralladura de limón\r\nPasos	\r\nEn un bowl colocas todos los ingredites secos y los integras.\r\n\r\n  \r\nAgregas el agua y la vainilla y revuelves hasta formar una mezcla homogénea.\r\n\r\n  \r\nDejas reposar por 10 min. se activara el gluten de la avena y le dará esa consistencia gomosa que conseguimos con e huevo.\r\n\r\n  \r\nColoca mezcla en tu wafflera para prepararlos de la forma tradicional.\r\n\r\n  \r\nLos puedes acompañar con lo que te guste: Mable, Mantequilla, Queso crema, queso rallado, frutas, helados un sinfín de combinaciones.');
 
 --
 -- Restricciones para tablas volcadas
@@ -406,35 +397,16 @@ ALTER TABLE `tfactura`
   ADD CONSTRAINT `tfactura_ibfk_2` FOREIGN KEY (`Num_Detalle`) REFERENCES `tdetalle` (`Num_Detalle`);
 
 --
--- Filtros para la tabla `tingredientes`
---
-ALTER TABLE `tingredientes`
-  ADD CONSTRAINT `tingredientes_ibfk_1` FOREIGN KEY (`Cod_Receta`) REFERENCES `treceta` (`Cod_Receta`);
-
---
--- Filtros para la tabla `tinventario`
---
-ALTER TABLE `tinventario`
-  ADD CONSTRAINT `tinventario_ibfk_1` FOREIGN KEY (`Cod_Articulo`) REFERENCES `tarticulos` (`Cod_Articulo`),
-  ADD CONSTRAINT `tinventario_ibfk_2` FOREIGN KEY (`Cod_Producto`) REFERENCES `tproducto` (`Cod_Producto`);
-
---
 -- Filtros para la tabla `tnomina_pago`
 --
 ALTER TABLE `tnomina_pago`
-  ADD CONSTRAINT `tnomina_pago_ibfk_1` FOREIGN KEY (`Cod_Nomina`) REFERENCES `templeados` (`ID_Empleado`);
+  ADD CONSTRAINT `tnomina_pago_ibfk_1` FOREIGN KEY (`ID_Empleado`) REFERENCES `templeados` (`ID_Empleado`);
 
 --
 -- Filtros para la tabla `tpedidos`
 --
 ALTER TABLE `tpedidos`
   ADD CONSTRAINT `tpedidos_ibfk_1` FOREIGN KEY (`ID_Cliente`) REFERENCES `tclientes` (`ID_Cliente`);
-
---
--- Filtros para la tabla `tproducto`
---
-ALTER TABLE `tproducto`
-  ADD CONSTRAINT `tproducto_ibfk_1` FOREIGN KEY (`Cod_Ingrediente`) REFERENCES `tingredientes` (`Cod_Ingrediente`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
