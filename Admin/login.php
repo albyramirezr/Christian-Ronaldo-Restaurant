@@ -10,8 +10,10 @@
     if($loginResult->num_rows > 0){
         // echo 'bien';
         $cifrado = crypt($pass,'rl');
-        setcookie($cifrado);
-        $cookieSQL = "ALTER TABLE tacceso SET cookie='$cifrado'";
+        setcookie('id',$cifrado);
+        $cookieSQL = "UPDATE tacceso SET cookie='$cifrado'";
+        $conn->query($cookieSQL);
+        header('Location:/Christian-Ronaldo-Restaurant/admin');
     }else{
         echo 'datos invalidos';
     }
