@@ -1,0 +1,54 @@
+body{
+  font-size: 18px;
+}
+span{
+  color: white;
+}
+.login{
+  border: 1px solid #218838;
+  border-radius: 20px;
+  font-weight: bold;
+}
+.card a{
+  text-decoration: none;
+  color: black;
+}
+.card a:hover{
+  color: white;
+}
+.cuerpoproducto{
+  color: #343A40;
+}
+.list-group-item-dark{
+  padding-left: 20px;
+  padding-right: 100px;
+}
+.c{
+  padding-left: 30px;
+  padding-right: 120px;
+}
+.i{
+  padding-left: none !important;
+  padding-right: none !important;
+}
+.tdventa{
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.tdventad{
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 150px;
+}
+.row_cliente{
+  text-align: center;
+  /* background-color: blue; */
+}
+.row_cliente:focus .row_actions{
+  display: inline;
+}
+.row_actions{
+  display: none;
+  border: none;
+}
