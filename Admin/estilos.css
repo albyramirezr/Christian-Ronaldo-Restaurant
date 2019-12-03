@@ -21,15 +21,15 @@ span{
 }
 .list-group-item-dark{
   padding-left: 20px;
-  padding-right: 100px;
+  padding-right: 130px;
 }
 .c{
   padding-left: 30px;
-  padding-right: 120px;
+  padding-right: 180px;
 }
 .i{
-  padding-left: none !important;
-  padding-right: none !important;
+  padding-left: 0 !important;
+  padding-right: 1 !important;
 }
 .tdventa{
   font-weight: bold;
@@ -41,14 +41,12 @@ span{
   padding-left: 10px;
   padding-right: 150px;
 }
-.row_cliente{
-  text-align: center;
-  /* background-color: blue; */
+.formulario input{
+  background: #E9ECEF;
 }
-.row_cliente:focus .row_actions{
-  display: inline;
+.formulario textarea{
+  background: #E9ECEF;
 }
-.row_actions{
-  display: none;
-  border: none;
+.formulario select{
+  background: #E9ECEF;
 }

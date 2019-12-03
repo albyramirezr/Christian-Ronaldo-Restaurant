@@ -32,6 +32,8 @@
     </nav>
 <!-- fin header-->
 <!--Cuerpo -->
+
+<!-- clientes-->
 <div class="container">
 
   <div class="row">
@@ -39,7 +41,6 @@
     </div>
     <div class="col-8 mt-4 cuerpoproducto">
       <h1>Cliente</h1>
-      <a href="nuevoCliente.html" target="_blank"><span class="badge badge-success">Agregar Nuevo Cliente</span></a>
     </div>
   </div>
   <div class="row mt-3">
@@ -48,98 +49,73 @@
     <div class="col-8">
       <form>
         <div class="form-group">
-          <label for="exampleInputEmail1">Buscar Cliente por nombre o por cedula</label>
+          <label for="exampleInputEmail1">Ingresar Cedula</label>
           <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
       </form>
-      <button type="submit" class="btn btn-primary">Buscar</button>
+      <button type="submit" class="btn btn-primary">Aceptar</button>
     </div>
     <div class="col-2">
     </div>
   </div>
+<!-- fin clientes-->
 
-
-
-  <div class="row">
-    <div class="col-2">
-    </div>
-    <div class="col-8 mt-4 cuerpoproducto">
-      <h1>Venta</h1>
-    </div>
-  </div>
-  <div class="row mt-3">
-    <div class="col-2">
-    </div>
-    <div class="col-8">
-      <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Buscar Producto por nombre o por codigo</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        </div>
-      </form>
-      <button type="submit" class="btn btn-primary">Buscar</button>
-    </div>
-    <div class="col-2">
-    </div>
-  </div>
-
-
+<!-- Productos-->
   <div class="row mt-3">
     <div class="col-2">
     </div>
     <div class="col-8 mt-4">
-      <h1>Lista de venta</h1>
+      <h1>Productos</h1>
     </div>
   </div>
-  <div class="row mt-5">
+
+  <div class="row mt-3">
     <div class="col-2">
 
     </div>
-    <div class="col-8">
-      <table border="1px solid black">
-        <tr>
-          <td class="tdventa">codigo</td>
-          <td class="tdventa">Cantidad</td>
-          <td class="tdventad">Descripcion</td>
-          <td class="tdventa">Precio U.</td>
-          <td class="tdventa">Precio T.</td>
-          <td class="tdventa">acciones</td>
-        </tr>
-      </table>
+    <div class="col-7">
+      <div class="form-group">
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-1">
+      <button type="button" class="btn btn-warning">+</button>
     </div>
   </div>
 
-
-      <div class="row">
-        <div class="col-2">
-        </div>
-        <div class="col-8 mt-4">
-          <h1>Detalles</h1>
-        </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col-2">
-        </div>
-        <div class="col-8">
-          <form>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Tipo de Pago</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>Efectivo</option>
-                <option>Debito</option>
-                <option>Credito</option>
-                <option>Otro</option>
-              </select>
-            </div>
-          </form>
-        </div>
-        <div class="col-2">
-        </div>
-      </div>
-
-
+<!-- fin productos-->
+<!-- pago-->
+<div class="row mt-3">
+  <div class="col-2">
+  </div>
+  <div class="col-8 mt-4">
+    <h1>Forma de Pago</h1>
+  </div>
 </div>
 
+<div class="row mt-3">
+  <div class="col-2">
+
+  </div>
+  <div class="col-8">
+    <div class="form-group">
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>Efectivo</option>
+        <option>Debito</option>
+        <option>Credito</option>
+        <option>Otro</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- fin forma de pago-->
 <!--Fin Cuerpo -->
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
