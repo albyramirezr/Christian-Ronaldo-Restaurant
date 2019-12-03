@@ -49,33 +49,6 @@
           <th class="list-group-item-dark c">Apellido</th>
           <th class="list-group-item-dark c">Telefono</th>
         </tr>
-        <?php
-          $verClientes = getClients();
-          while($row = $verClientes->fetch_assoc()){
-            echo "
-              <tr class='row_cliente'>
-              <form method='POST' action=''>
-                <td name='del_client'>".$row['ID_Cliente']."</td>
-                <td>".$row['Nombre_C']."</td>
-                <td>".$row['Apellido_C']."</td>
-                <td>".$row['Telefono_C']."</td>
-                <td class='row_actions'>
-                  
-                  <button name='del_row' class='btn btn-danger btn-sm' type='submit'>Eliminar</button>
-                  
-                  </td>
-                  </form>
-              <tr>
-            ";
-          }
-          if(isset($_POST['del_row'])){
-            $client = $_POST['del_client'];
-            echo "<script>alert('$client');</script>";
-          }
-        ?>
-        <?php
-
-        ?>
       </table>
     </div>
   </div>
